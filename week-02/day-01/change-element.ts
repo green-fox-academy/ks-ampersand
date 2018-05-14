@@ -4,4 +4,12 @@
 
 let numList = [1, 2, 3, 8, 5, 6];
 
-numList.map(numList[3] => 4);
+numList = numList.map(function(current, index) {
+    if (index === 3) {
+        return 4;
+    }
+    return current;
+});
+
+console.log(numList);
+
