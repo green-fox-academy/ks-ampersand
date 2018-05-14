@@ -8,3 +8,7 @@ let integers = [4, 5, 6, 7];
 integers.forEach(function(element) {
   console.log(element);
 });
+
+for (let i: number = 0; i < integers.length; i++) {
+    console.log(integers[i]);
+};
