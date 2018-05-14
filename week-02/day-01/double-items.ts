@@ -4,7 +4,7 @@
 
 let drinks = ['Gin', 'Whiskey', 'Wine', 'Beer'];
 
-drinks = drinks.map(function(elements) {
-    return `${elements}${elements}`
+drinks = drinks.map(function(element) {
+    return `${element}${element}`
 });
 console.log(drinks);
