@@ -5,10 +5,12 @@
 
 let integers = [4, 5, 6, 7];
 
+//first option
 integers.forEach(function(element) {
   console.log(element);
 });
 
+//second option
 for (let i: number = 0; i < integers.length; i++) {
     console.log(integers[i]);
 };
