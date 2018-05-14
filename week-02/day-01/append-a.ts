@@ -5,7 +5,7 @@
 
 let animals = ["kuty", "macsk", "cic"];
 
-  animals = animals.map(function(elements) {
-      return `${elements}a`
+  animals = animals.map(function(element) {
+      return `${element}a`
   });
   console.log(animals);
