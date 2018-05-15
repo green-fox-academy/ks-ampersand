@@ -4,8 +4,9 @@ export {};
 // The parameter should be a list.
 let far: string[] = ['kuty', 'macsk', 'kacs', 'rók', 'halacsk'];
 
-function appendA(array: string[]):string[]{
-    array = array.map(element => {element = `${element}a`; 
+function appendA(array: string[]): string[] {
+    array = array.map(function(element) {
+        element = `${element}a`; 
     return element;
    });
       return array;
