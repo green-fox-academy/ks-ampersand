@@ -43,7 +43,7 @@ function methodRatio(logFile: string, ut: string) {
     } else if (element === 'GET') {
       get.push(wholeLogBySpace[element]);
     }
-  })
+  });
   return get.length / post.length;
 }
 
