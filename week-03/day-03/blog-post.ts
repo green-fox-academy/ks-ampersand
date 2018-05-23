@@ -5,26 +5,20 @@ export class blogPost{
   title: string;
   text: string;
   publicationDate: string;
+    constructor(authorName: string, title: string, text: string, publicationDate: string) {
+      this.authorName = authorName;
+      this.title = title;
+      this.text = text;
+      this.publicationDate = publicationDate;
+    }
 }
 
-let blogPost1 = new blogPost;
-blogPost1.authorName = 'John Doe';
-blogPost1.title = 'Lorem Ipsum';
-blogPost1.text = 'Lorem ipsum dolor sit amet.';
-blogPost1.publicationDate = '2000.05.04.';
+let blogPost1 = new blogPost('John Doe', 'Lorem Ipsum', 'Lorem ipsum dolor sit amet.', '2000.05.04.');
 console.log(blogPost1);
 
-let blogPost2 = new blogPost;
-blogPost1.authorName = 'Tim Urban';
-blogPost1.title = 'Wait but why';
-blogPost1.text = 'A popular long-form, stick-figure-illustrated blog about almost everything.';
-blogPost1.publicationDate = '2010.10.10.';
-console.log(blogPost1);
+let blogPost2 = new blogPost('Tim Urban', 'Wait but why', 'A popular long-form, stick-figure-illustrated blog about almost everything.', '2010.10.10.');
+console.log(blogPost2);
 
-let blogPost3 = new blogPost;
-blogPost1.authorName = 'William Turton';
-blogPost1.title = 'One Engineer Is Trying to Get IBM to Reckon With Trump';
-blogPost1.text = 'Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center of attention. When I asked to take his picture outside one of IBM’s New York City offices, he told me that he wasn’t really into the whole organizer profile thing.';
-blogPost1.publicationDate = '2017.03.28.';
-console.log(blogPost1);
+let blogPost3 = new blogPost('William Turton', 'One Engineer Is Trying to Get IBM to Reckon With Trump', 'Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center of attention. When I asked to take his picture outside one of IBM’s New York City offices, he told me that he wasn’t really into the whole organizer profile thing.', '2017.03.28.');
+console.log(blogPost3);
 
