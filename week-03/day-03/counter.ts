@@ -2,8 +2,8 @@
 
 export class Counter {
   calc: number;
-  constructor(calc: number = 0) {
-    this.calc = calc;
+  constructor() {
+    this.calc = 0;
   }
 add(a?: number) {
   if (a === undefined) {
