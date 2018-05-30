@@ -19,7 +19,7 @@ let y: number = 200;
   s += 2;
   x--;
   y--;
-  ctx.strokeStyle = `hsl(${i % 360}, 100%, 50%)`;
+  ctx.strokeStyle = `hsl(${i}, 100%, 50%)`;
   ctx.strokeRect(x, y, s, s);
   }
 } 
