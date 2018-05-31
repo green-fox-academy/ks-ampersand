@@ -17,15 +17,15 @@ class Plants {
   }
 
   getWaterNeed(i: number) {
-    if (this.waterAmount < this.waterNeed) {
-      console.log(`${i} The ${this.colorName} ${this.type} needs water`);
+    if (this.waterAmount <= this.waterNeed) {
+      console.log(`${i} The ${this.colorName} ${this.type} needs water because ${this.waterAmount}`);
     } else {
-      console.log(`${i} The ${this.colorName} ${this.type} doesn't need water`);
+      console.log(`${i} The ${this.colorName} ${this.type} doesn't need water because ${this.waterAmount}`);
     }
   }
 
   returnWaterNeed(): boolean {
-    if (this.waterAmount < this.waterNeed) {
+    if (this.waterAmount <= this.waterNeed) {
       return true;
     } else {
       return false;
