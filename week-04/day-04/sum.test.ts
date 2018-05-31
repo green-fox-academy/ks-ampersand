@@ -1,6 +1,6 @@
 'use strict';
 
-import {test} from 'tape';
+import { test } from 'tape';
 import { Numbers } from './sum';
 
 test('Sum test 1: Core Functionality', t => {

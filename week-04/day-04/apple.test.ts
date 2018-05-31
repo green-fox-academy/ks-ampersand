@@ -1,6 +1,6 @@
 'use strict';
 
-import {test} from 'tape';
+import { test } from 'tape';
 import { Apple } from './apple';
 
 test('testing the apple', t => {

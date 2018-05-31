@@ -1,6 +1,6 @@
 'use strict';
 
-import {test} from 'tape';
+import { test } from 'tape';
 import { getAnagram } from './agraman';
 
 test('Test the anagram', t => {
