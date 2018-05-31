@@ -5,11 +5,10 @@ import { Flower } from './flowers';
 import { Tree } from './trees';
 
 class Garden {
-
-plants: any [];
+plants: Plants [];
 
 constructor(){
-this.plants = [];
+  this.plants = [];
 }
 
 createGarden() {
@@ -17,32 +16,33 @@ createGarden() {
  this.plants.push(new Flower('blue'));
  this.plants.push(new Tree('purple'));
  this.plants.push(new Tree('orange'));
- 
 }
 
 needWater(): number {
   let amntNeedWater: number = 0;
   for (let i: number = 0; i < this.plants.length; i++){
-    if (this.plants[i].returnWaterNeed()) {
-      amntNeedWater++;
+    if (this.plants[i].returnWaterNeed() === true) {
+        amntNeedWater++;
       } 
     }
   return amntNeedWater;
   }
 
-  waterPlants(waterAmount: number){
-    Math.floor(waterAmount / this.needWater());
+  waterPlants(waterAmount: number): void {
+    let portion: number = Math.floor(waterAmount / this.needWater());
+    for (let i: number = 0; i < this.plants.length; i++) {
+      if (this.plants[i].returnWaterNeed()) {
+      this.plants[i].modifyWaterAmount(portion);
+      }
+    }
     console.log(`Watering with ${waterAmount}`);
   }
 
-  checkKellVizecskem() {
+  isNeedingWater() {
     for (let i: number = 0; i < this.plants.length; i++){
-      this.plants[i].getWaterNeed();
+      this.plants[i].getWaterNeed(i);
     } 
   }
 }
 
-let pp = new Garden();
-pp.createGarden();
-pp.needWater();
-pp.checkKellVizecskem();
+export { Garden };

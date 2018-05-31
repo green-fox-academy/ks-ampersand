@@ -6,22 +6,29 @@ class Plants {
   protected waterAmount: number;
   protected type: string;
 
-  constructor(colorName: string) {
+  constructor(type: string, colorName: string) {
+    this.type = type;
     this.colorName = colorName;
-    this.waterNeed = 0;
     this.waterAmount = 0;
   }
 
-  getWaterNeed() {
+  modifyWaterAmount(n: number) {
+    this.waterAmount += n;
+  }
+
+  getWaterNeed(i: number) {
     if (this.waterAmount < this.waterNeed) {
-      console.log(`The ${this.colorName} ${this.type} needs water`);
-    } else {console.log(`The ${this.colorName} ${this.type} doesn't need water`);
+      console.log(`${i} The ${this.colorName} ${this.type} needs water`);
+    } else {
+      console.log(`${i} The ${this.colorName} ${this.type} doesn't need water`);
     }
   }
 
   returnWaterNeed(): boolean {
     if (this.waterAmount < this.waterNeed) {
-    return true;
+      return true;
+    } else {
+      return false;
     }
   }
 }

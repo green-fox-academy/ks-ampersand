@@ -3,10 +3,8 @@
 import { Plants } from './plants';
 
 class Flower extends Plants {
-type: string = 'Flower';
-
-  constructor(colorName){
-  super(colorName)
+  constructor(colorName: string){
+  super('Flower', colorName);
   this.waterNeed = 5;
   }
 
