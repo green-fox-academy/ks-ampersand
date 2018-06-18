@@ -5,27 +5,31 @@
 
 html, body {
   height: 100%;
+  width: 100%;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
-  width: 400px;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .green {
   background-color: #00FA9A;
-  flex: 1;
 }
 
 .yellow {
   background-color: #FFFF99;
-  flex: 2;
-  order: 2;
+  width: 600px;
+  height: 600px;
+  z-index: 2;
 }
 
 .purple {
   background-color: #DDA0DD;
-  flex: 1;
+  position: fixed;
+  z-index: 999;
+  width: 200px;
+  height: 200px;
 }
