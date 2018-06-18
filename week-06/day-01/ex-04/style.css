@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100%;
+}
+
+.green {
+  background-color: #00FA9A;
+  flex: 1;
+}
+
+.yellow {
+  background-color: #FFFF99;
+  flex: 2;
+  order: 2;
+}
+
+.purple {
+  background-color: #DDA0DD;
+  flex: 1;
+}
