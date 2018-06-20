@@ -13,4 +13,4 @@ button.onclick = () => {
   } else {
     div.classList.value = '';
   }
-}; 
+};
