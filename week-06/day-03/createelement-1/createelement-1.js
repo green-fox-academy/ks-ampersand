@@ -16,7 +16,7 @@ myAsteroidList.appendChild(lampLighter);
 
 // Add a heading saying 'I can add elements to the DOM!' to the .container.
 let header = document.createElement('h1')
-header  .textContent = 'I can add elements to the DOM! How awesome is that?';
+header.textContent = 'I can add elements to the DOM! How awesome is that?';
 let container = document.querySelector('div.container')
 container.appendChild(header);
 
