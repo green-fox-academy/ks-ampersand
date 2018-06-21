@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 
 // home page
 app.get('/', (req, res) => {
-  console.log(req.query);
+  //console.log(req.query);
   let name = 'Guest';
   if (req.query.name !== undefined) {
     name = req.query.name;
