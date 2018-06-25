@@ -60,35 +60,37 @@ app.get('/appenda/:input', (req, res) => {
 
 //do-until exercise
 
-function factorio(num) {
-  if (num <= 1) {
-    return 1;
+function fact(num) {
+  let multiply = 1;
+  for (let i = 1; i < num; i++) {
+    multiply *= i;
   }
-  else {
-    factorio(num - 1);
-    return num * factorio(num - 1);
-  }
+  return multiply;
 }
 
 function sum(num) {
-  if (num <= 0) {
-    return 0;
-  } else {
-    return (num + sum(num - 1))
-  };
+  let sum = 0;
+  for (let i = 0; i < num; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 app.post('/dountil/:what', (req, res) => {
   const what = req.params.what;
-  const input = req.body.until;
+  let input = req.body.until;
 
   if (what === 'factor') {
     res.json({
-      result: factorio(input)
+      input,
+      result: fact(input),
+      message: 'I see you'
     })
   } else if (what === 'sum') {
     res.json({
-      result: sum(input)
+      input: input,
+      result: sum(input),
+      message: 'I see you'
     })
   } else if (input === undefined) {
     res.json({
