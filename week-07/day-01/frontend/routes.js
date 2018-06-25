@@ -79,26 +79,66 @@ function sum(num) {
 app.post('/dountil/:what', (req, res) => {
   const what = req.params.what;
   let input = req.body.until;
+  console.log(input)
 
-  if (what === 'factor') {
+  if (input === undefined) {
     res.json({
-      input,
-      result: fact(input),
-      message: 'I see you'
+      error: 'Please provide a number!'
     })
   } else if (what === 'sum') {
     res.json({
-      input: input,
       result: sum(input),
-      message: 'I see you'
     })
-  } else if (input === undefined) {
+  } else if (what === 'factor') {
     res.json({
-      error: 'Please provide a number!'
+      result: fact(input),
     })
   }
 });
 
+//arrays exercise
 
+function sumMyArray(array) {
+  let sumArray = 0;
+  array.forEach(e => { sumArray += e });
+  return sumArray;
+}
+
+function multiplyMyArray(array) {
+  let multArray = 1;
+  array.forEach(e => { multArray *= e });
+  return multArray;
+}
+
+function doubleMyArray(array) {
+  let newArray = array.map((e) => { return e *= 2 });
+  return newArray;
+}
+
+app.post('/arrays/', (req, res) => {
+  const what = req.body.what;
+  const numbers = req.body.numbers;
+  if (what === undefined) {
+    res.json({
+      error: 'Please provide What the hell to do with the numbers!',
+    });
+  } else if (numbers === undefined) {
+    res.json({
+      error: 'Please provide the Numbers to do the hell with!',
+    });
+  } else if (what === 'sum') {
+    res.json({
+      result: sumMyArray(numbers),
+    });
+  } else if (what === 'multiply') {
+    res.json({
+      result: multiplyMyArray(numbers),
+    });
+  } else if (what === 'double') {
+    res.json({
+      result: doubleMyArray(numbers),
+    });
+  }
+});
 
 module.exports = app;
