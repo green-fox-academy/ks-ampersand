@@ -42,6 +42,7 @@ for (let i = 0; i < planetData.length; i++) {
     let newAsteroid = document.createElement('li'); 
     newAsteroid.textContent = planetData[i].content;
     newAsteroid.classList.value = planetData[i].category;
+    newAsteroid.classList.add('planet');
     asteroids.appendChild(newAsteroid);
   }
 }
