@@ -11,7 +11,7 @@ myAsteroidList.appendChild(newAsteroid);
 // Add an item that says 'The Lamplighter' to the asteroid list.
 
 let lampLighter = document.createElement('li');
-lampLighter.textContent = 'The Lamplighter'
+lampLighter.textContent = 'The Lamplighter';
 myAsteroidList.appendChild(lampLighter);
 
 // Add a heading saying 'I can add elements to the DOM!' to the .container.
