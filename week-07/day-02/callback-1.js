@@ -2,10 +2,7 @@
 
 const mapWith = (array, callback) => {
   let output = [];
-
-  for (let i = 0; i < array.length; i++) {
-    output.push(callback(array[i]));
-  }
+  output = (array.map(e => callback(e)));
   return output
 }
 
@@ -22,7 +19,16 @@ console.log(mapWith([1, 2, 3], addOne));
 
 // Create a callback function which remove every second letter from a string
 
-/* const words = ['map', 'reduce', 'filter'];
+const removeSecondLetter = (string) => {
+  let str = string.split('');
+  let nth = 2;
+  for (let i = 1; i < str.length - 1; i += nth) {
+    str[i] = ''
+  }
+  return str.join('');
+}
 
-console.log(mapWith(words, removeSecondLetter)); */
+const words = ['map', 'reduce', 'filter'];
+
+console.log(mapWith(words, removeSecondLetter));
 // expected result: ['mp','rdc', 'fle']
