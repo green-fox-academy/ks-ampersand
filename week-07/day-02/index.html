@@ -43,19 +43,36 @@
 
     <script>
         // 1: generate 100 divs to the <section> element and add index numbers to it as the element's textContent
+
         const section = document.querySelector('section');
-        
-        for (let i = 0; i < 100; i++) {
+
+        for (let i = 1; i < 100; i++) {
             const newDiv = document.createElement('div')
             section.appendChild(newDiv);
-            console.log(newDiv)
             newDiv.innerText = i + 1;
         }
 
-          // 2: Create a function that adds a 'not-prime' class to a div if it's not a prime and 'prime' if it is
+        // 2: Create a function that adds a 'not-prime' class to a div if it's not a prime and 'prime' if it is
+
+        const divArray = document.querySelectorAll('section div');
+
+
+        function isPrime(array) {
+            array.forEach(element => {
+                element.className = 'prime'
+                for (i = 2; i < element.innerHTML - 1; i++) {
+                    if (element.innerHTML % i === 0) {
+                        element.className = 'not-prime';
+                    }
+                }
+            });
+        }
+        isPrime(divArray);
           // 3: Create a timer that keeps calling the prime validatior function until it reaches the end of elements
           //  - the timer should fire every 100ms
           //  - the timer should stop when there are no more elements left to be colored
+
+          let timer = setInterval(() => isPrime(divArray), 100);
     </script>
 </body>
 
