@@ -7,7 +7,6 @@ http.onload = () => {
   const container = document.querySelector('#pics');
 
   response.data.forEach((element) => {
-    const div = document.createElement('div');
     const image = document.createElement('img');
 
     image.src = element.images.fixed_width_still.url;
