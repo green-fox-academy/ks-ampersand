@@ -57,9 +57,34 @@ app.post('/posts', (req, res) => {
         res.sendStatus(500);
         return;
       }
-          res.json({
-            posts,
-          })
+      res.json({
+        posts,
+      })
+    });
+  });
+});
+
+//upvote logic
+app.post('/posts/:id/upvote', (req, res) => {
+  let id = req.params.id;
+  let sql = `UPDATE posts SET score = score + 1, vote = "1" WHERE id="${id}";`;
+
+  conn.query(sql, (err, posts) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    }
+    sql = `SELECT * FROM posts WHERE id = '${id}'`;
+    conn.query(sql, (err, posts) => {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      res.json({
+        posts,
+      });
     });
   });
 });
