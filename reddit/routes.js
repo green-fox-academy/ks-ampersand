@@ -39,6 +39,29 @@ app.get('/posts', (req, res) => {
   });
 });
 
+//send post request with the new data
+app.post('/posts', (req, res) => {
+  let sql = `INSERT INTO posts (title, url) VALUES ('${req.body.title}','${req.body.url}')`;
 
+  conn.query(sql, (err, posts) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    }
+    sql = `SELECT * FROM posts WHERE id = ${posts.insertId}`;
+
+    conn.query(sql, (err, posts) => {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+          res.json({
+            posts,
+          })
+    });
+  });
+});
 
 module.exports = app;
