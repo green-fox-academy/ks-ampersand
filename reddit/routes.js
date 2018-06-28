@@ -109,7 +109,7 @@ app.post('/posts/:id/downvote', (req, res) => {
       res.json({
         posts
       });
-    });  
+    });
   });
 });
 
