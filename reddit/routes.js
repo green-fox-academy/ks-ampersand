@@ -14,7 +14,6 @@ const conn = mysql.createConnection({
 app.use(express.json());
 app.use('/assets', express.static('assets'));
 
-
 //render the home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
@@ -86,6 +85,31 @@ app.post('/posts/:id/upvote', (req, res) => {
         posts,
       });
     });
+  });
+});
+
+//downvote logic
+app.post('/posts/:id/downvote', (req, res) => {
+  let id = req.params.id;
+  let sql = `UPDATE posts SET score = score - 1, vote = '-1' WHERE id="${id}";`;
+
+  conn.query(sql, (err, posts) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    }
+    sql = `SELECT * FROM posts WHERE id = '${id}'`;
+    conn.query(sql, (err, posts) => {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      res.json({
+        posts
+      });
+    });  
   });
 });
 
