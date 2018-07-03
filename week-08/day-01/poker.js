@@ -58,3 +58,17 @@ module.exports = function checkIfFlush(oneHand) {
   }));
   return true;
 };
+
+module.exports = function checkRepetitions(oneHand) {
+  let counter = {};
+  for (let i = 0; i < oneHand.length; i++) {
+    let cardValue = oneHand[i].charAt(0);
+    if (counter[oneHand[i].charAt(0)]) {
+      counter[oneHand[i].charAt(0)]++;
+    } else {
+      counter[oneHand[i].charAt(0)] = 1;
+    }
+  }
+  console.log(typeof(cardValue));
+  return counter;
+}
