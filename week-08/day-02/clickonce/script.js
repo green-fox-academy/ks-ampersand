@@ -12,8 +12,8 @@ let counter = 0;
 var date = new Date();
 var timestamp = date.getTime();
 
-// First solution
-function showTimeStamp() {
+// First solution: remove event listener
+ function showTimeStamp() {
   counter++;
   if (counter === 1) {
     button.removeEventListener('click', showTimeStamp);
@@ -21,6 +21,15 @@ function showTimeStamp() {
   console.log(timestamp);
 }
 
-button.addEventListener('click', showTimeStamp);
+button.addEventListener('click', showTimeStamp); 
 
+//Second solution: disable the button
+function logTimeStamp() {
+  counter++;
+  if (counter === 1) {
+    button.disabled = true;
+  }
+  console.log(timestamp);
+}
 
+button.addEventListener('click', logTimeStamp);
