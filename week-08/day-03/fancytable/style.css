@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-weight: 300;
+}
+
+body {
+  background: #3c94eb;
+  display: flex;
+  justify-content: center;
+}
+
+.tablecontainer {
+  width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+table {
+  font-family: 'Montserrat', sans-serif;
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+thead {
+  background: black;
+  color: #c8d0d9;
+  border-bottom: 4px solid #c8cdd0;
+}
+
+th {
+  padding: 15px 20px;
+  font-size: 20px;
+}
+
+tbody {
+  color: #7c8096;
+}
+
+.borderright {
+  border-right: 1px solid #c8cdd0;
+}
+
+/* Rounding the corners*/
+#months {
+  border-radius: 5px 0 0 0;
+  
+
+}
+
+#sales {
+  border-radius: 0 5px 0 0;
+}
+
+#two {
+  border-radius: 0 0 5px 0;
+}
+
+#one {
+  border-radius: 0 0 0 5px;
+}
+/* ----------------------- */
+
+tbody tr:nth-child(odd) {
+  background: #ebebeb;
+  border-radius: 10px;
+}
+
+tbody tr:nth-child(even) {
+  background: #fff;
+}
+
+tr {
+  border-bottom: 1px solid #c8cdd0;
+}
+
+td {
+  padding: 15px 20px;
+}
+
+.nobottom {
+  border-bottom: none;
+
+}
