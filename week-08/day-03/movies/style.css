@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.moviescontainer {
+  background: moccasin;
+  border-radius: 4px;
+  height: 200px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 10px auto;
+}
+
+form {
+  margin: 20px auto;
+}
+
+#genres {
+  margin-right: 10px;
+}
