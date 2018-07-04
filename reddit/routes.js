@@ -113,4 +113,31 @@ app.post('/posts/:id/downvote', (req, res) => {
   });
 });
 
+//delete logic
+
+app.post('/posts/:id', (req, res) => {
+  let id = req.params.id;
+  let sql = `DELETE FROM posts WHERE id="${id}";`;
+
+  conn.query(sql, (err, posts) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    }
+    sql = `SELECT * FROM posts WHERE id = '${id}'`;
+    conn.query(sql, (err, posts) => {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      res.json({
+        sql
+      });
+      console.log(`Deleted post number ${id}`);
+    });
+  });
+});
+
 module.exports = app;
