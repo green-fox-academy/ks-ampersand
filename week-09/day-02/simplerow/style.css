@@ -1,0 +1,24 @@
+body {
+  color: #fff;
+	font-family: 'Nunito Semibold';
+  text-align: center;
+  background-color: blueviolet;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-column-gap: 5px;
+  width: 100%;
+  grid-auto-rows: minmax(200px, auto);
+  margin: 0 auto;
+
+}
+
+.left, .right {
+  background-color: yellow;
+}
+
+.middle {
+  background-color: chartreuse;
+}
