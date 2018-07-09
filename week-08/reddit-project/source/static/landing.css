@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  background: #eeeeee;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+header {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  background-image: url('../assets/background.jpg');
+  color: #f5f5f5;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+
+}
+
+.headcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  letter-spacing: 2em;
+  margin-bottom: 20px;
+  text-indent: 2em;
+}
+
+header h3 {
+  font-size: 16px;
+}
+
+.page-structure {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  flex: 0.8;
+  margin-right: 10px;
+}
+
+.asidecontainer {
+  display: flex;
+  flex-direction: column;
+  flex: 0.2;
+}
+
+#submit-landing {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #4aa3df;
+  height: 30px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  letter-spacing: 0.1em;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+#submit-landing a {
+  color: white;
+}
+
+.about li, p {
+  font-size: 10px;
+}
+
+.about li {
+  line-height: 1.7em;
+}
+
+.about p {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+ul {
+  padding-left: 15px;
+}
+
+.about {
+  background: #f5f5f5;
+}
+
+.learnabout {
+  padding: 10px;
+}
+
+a {
+  color: #FA9414;
+  text-decoration: none;
+}
+
+.asidecontainer h2 {
+  font-size: 12px;
+  background: #fbfbfb;
+  padding: 10px;
+  color: #555;
+}
+
+.about h2 a {
+  color: #4a98c6;
+}
+
+.post-container {
+  width: 100%;
+  height: 82px;
+  background: white;
+  margin: 1px;
+  padding: 10px;
+  box-sizing: border-box; 
+ }
+
+ .post-container {
+   display: flex;
+ }
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.postcontent a:hover {
+  color: #E18512;
+  font-weight: bold;
+}
+
+.content-container ul {
+  list-style-type: none;
+}
+
+.content-container li {
+  display: inline-block;
+  margin-left: 5px;
+}
+ .score-container {
+   display: flex;
+   flex-direction: column;
+ }
+
+.up-button {
+  background-image: url('../assets/upvote.png');
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.down-button {
+  background-image: url('../assets/downvote.png');
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
