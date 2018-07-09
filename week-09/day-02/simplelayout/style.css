@@ -1,0 +1,56 @@
+.all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-template-rows: repeat(4, minmax(150px, auto));
+  margin: 0 auto;
+  width: 1300px;
+}
+
+header {
+  width: 1440px;
+  height: 50px;
+  background-color: purple;
+  margin-bottom: 10px;
+}
+
+aside {
+  background-color: greenyellow;
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+
+main {
+  background-color: plum;
+  grid-column: 2 / 4;
+  grid-row: 1 / 4;
+
+}
+
+footer {
+  background-color: blanchedalmond;
+  grid-column: 1 / 4;
+  height: 50px; 
+}
+
+nav {
+  width: 32%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav a {
+  background-color: aqua;
+  margin: 0 10px;
+  width: 70px;
+  height: 30px;
+  margin: 10px auto;
+}
