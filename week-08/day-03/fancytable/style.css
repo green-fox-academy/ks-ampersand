@@ -48,7 +48,7 @@ tbody {
 }
 
 /* Rounding the corners*/
-#months {
+/* #months {
   border-radius: 5px 0 0 0;
 }
 
@@ -62,8 +62,13 @@ tbody {
 
 #one {
   border-radius: 0 0 0 5px;
-}
+} */
 /* ----------------------- */
+
+table {
+  border-radius: 5px;
+  overflow: hidden;
+}
 
 tbody tr:nth-child(odd) {
   background: #ebebeb;
