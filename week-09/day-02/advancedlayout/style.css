@@ -10,7 +10,6 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   grid-template-rows: repeat(2, 300px);
-  margin: 0 auto;
   width: 93%;
   margin: 10px auto;
 }
