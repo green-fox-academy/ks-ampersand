@@ -32,7 +32,7 @@ app.get('/hello', (req, res) => {
 
 //get posts
 app.get('/api/posts', (req, res) => {
-  
+
   conn.query('SELECT * FROM posts ORDER BY id DESC;', (err, posts) => {
     if (err) {
       console.log(err);
@@ -146,5 +146,30 @@ app.delete('/posts/:id', (req, res) => {
     });
   });
 });
+
+//modify page
+app.get('/modify', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/modify.html'));
+});
+
+app.put('/modify/:id', (req, res) => {
+  let id = parseInt(req.params.id);
+  let query = [req.body.title, req.body.url];
+  let sql = `UPDATE posts SET title = ?, url = ? WHERE id="${id}";`;
+
+  conn.query(sql, query, (err, posts) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    }
+
+    res.json({
+      message: 'Oké',
+    });
+  });
+});
+
+
 
 module.exports = app;

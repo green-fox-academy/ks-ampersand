@@ -52,9 +52,12 @@ function sendRequest(request, route, callback) {
       upvoteReq.send(JSON.stringify({
         vote : 1,
       }));
+      upvoteReq.onload = () => {
+        location.reload();
+      }
     });
 
-    const arrowDownDiv = document.createElement('div')
+    const arrowDownDiv = document.createElement('div');
     arrowDownDiv.className = 'arrowdown';
     arrowBlockDiv.appendChild(arrowDownDiv);
     const arrowDown = document.createElement('button');
@@ -68,6 +71,9 @@ function sendRequest(request, route, callback) {
       downvoteReq.send(JSON.stringify({
         vote : -1,
       }));
+      downvoteReq.onload = () => {
+        location.reload();
+      }
     });
 
     const contentBlockDiv = document.createElement('div');
@@ -101,6 +107,8 @@ function sendRequest(request, route, callback) {
     ul.appendChild(modifyLi);
     modifyLi.appendChild(modifya);
     modifya.innerHTML = 'Modify';
+    modifya.href = `/modify?id=${post.id}?title=${post.title}?url=${post.url}`;
+    
 
     const deleteLi = document.createElement('li');
     const deletea = document.createElement('a');
@@ -110,12 +118,16 @@ function sendRequest(request, route, callback) {
     deletea.innerHTML = 'Delete';
 
     deletea.addEventListener('click', () => {
+      console.log('yo');
       const delReq = new XMLHttpRequest();
       delReq.open('DELETE', `/posts/${post.id}`);
       delReq.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
       delReq.send(JSON.stringify({
         id: post.id
       }))
+      delReq.onload = () => {
+        location.reload();
+      }
     })
   });
 
