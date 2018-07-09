@@ -1,0 +1,41 @@
+npm init -y --save
+npm i mysql --save-dev
+npm i express dotenv nodemon --save
+code .env
+code .gitignore
+--> node_modules/ , .env
+
+folder structure: 
+main 
+    --> source
+                --> views 
+                          -->.html
+                --> static
+                          --> .js, .css
+                --> assets (pics, etc.)
+.
+
+> download database
+mysql -u root -p
+после того как пароль ввдён, копировать код из экзамена
+Потом: 
+
+SHOW DATABASES;
+USE database;
+SHOW TABLES;
+SELECT * FROM table;
+
+code .env 
+без скобочек: 
+{
+DB_HOST = localhost
+DB_USER = root
+DB_PASSWORD = password
+DB_DATABASE = database
+}
+
+mkdir source && cd source
+mkdir views && mkdir static
+code server.js && code routes.js
+
+
