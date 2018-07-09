@@ -1,0 +1,78 @@
+.all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-template-rows: repeat(2, 300px);
+  margin: 0 auto;
+  width: 93%;
+  margin: 10px auto;
+}
+
+.content div {
+  overflow: scroll;
+  padding: 20px;
+  font-size: 12px;
+  font-family: 'Nunito Semibold';
+  color: lightgrey;
+}
+
+.green {
+  background-color: forestgreen;
+}
+
+
+.nested p {
+  background-color: red;
+  width: 80%;
+  height: 70%;
+}
+
+.nested {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.one, .three {
+  grid-column: 1 / 3;
+}
+
+.two {
+  grid-column: 3 / 5;
+}
+
+footer {
+  background-color: lightseagreen;
+  width: 93%;
+  height: 50px; 
+  align-self: center;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: purple;
+}
+
+nav {
+  width: 32%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav a {
+  background-color: aqua;
+  margin: 0 10px;
+  width: 70px;
+  height: 30px;
+  margin: 10px auto;
+}
