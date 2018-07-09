@@ -1,7 +1,4 @@
 body {
-  color: #fff;
-	font-family: 'Nunito Semibold';
-  text-align: center;
   background-color: darkslategray;
 }
 
@@ -21,9 +18,9 @@ body {
 .nested {
   background-color: green;
   grid-column: 2 / 4;
-  display: flex;
+  display: grid;
   grid-template-columns: 1fr;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
 }
 
