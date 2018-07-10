@@ -12,13 +12,20 @@ body {
   width: 100%;
   grid-auto-rows: minmax(200px, auto);
   margin: 0 auto;
+  font-size: 28px;
 
 }
 
 .left, .right {
   background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .middle {
   background-color: chartreuse;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
