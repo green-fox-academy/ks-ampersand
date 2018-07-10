@@ -18,9 +18,8 @@ body {
 .nested {
   background-color: green;
   grid-column: 2 / 4;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
