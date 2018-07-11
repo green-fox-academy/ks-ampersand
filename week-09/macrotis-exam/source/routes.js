@@ -23,10 +23,11 @@ app.get('/', (req, res) => {
 //add attractions to the page
 app.post('/add', (req, res) => {
   let query = [req.body.name, req.body.city, req.body.category, req.body.price, req.body.longitude, req.body.lattitude, req.body.age, req.body.duration];
+  let sql = '';
   if (req.body.id) {
-    let sql = `UPDATE attractions SET attr_name = ?, city = ?, category = ?, price = ?, longitude = ?, lattitude =?, recommended_age = ?, duration = ? WHERE id="${req.body.id}";`;
+    sql = `UPDATE attractions SET attr_name = ?, city = ?, category = ?, price = ?, longitude = ?, lattitude = ?, recommended_age = ?, duration = ? WHERE id="${req.body.id}";`;
   } else {
-    let sql = `INSERT INTO attractions (attr_name, city, category, price, longitude, lattitude, recommended_age, duration) VALUES ('${req.body.name}, ${req.body.city}, ${req.body.category}, ${req.body.price}, ${req.body.longitude}, ${req.body.lattitude}, ${req.body.age}, ${req.body.duration}')`;
+    sql = `INSERT INTO attractions (attr_name, city, category, price, longitude, lattitude, recommended_age, duration) VALUES ('${req.body.name}', '${req.body.city}', '${req.body.category}', ${req.body.price}, ${req.body.longitude}, ${req.body.lattitude}, ${req.body.age}, ${req.body.duration});`;
   }
 
   conn.query(sql, query, (err, rows) => {
@@ -35,21 +36,33 @@ app.post('/add', (req, res) => {
       res.sendStatus(500);
       return;
     }
-
-    sql =  `SELECT id FROM attractions WHERE attr_name = '${req.body.name}'`;
-
-    conn.query(sql, (err, rows) => {
-      if (err) {
-        console.log(err);
-        res.sendStatus(500);
-        return;
-      }
-      res.json({
-        status: 'Ok',
-        id,
-      });
-    })
+    res.json({
+      status: 'Ok',
+      id: req.body.id || rows.insertId,
+    });
   });
 });
+
+app.get('/attractions', (req, res) => {
+  let sql = `SELECT * from attractions;`;
+  let query = [];
+  if (req.query.category && req.query.city) {
+    query = [req.query.category, req.query.city]
+    console.log(query);
+    sql = `SELECT * from attractions WHERE category = ? AND city = ?;`
+    console.log(sql);
+    
+  }
+  conn.query(sql, query, (err, rows) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    }
+    res.json(rows);     //чтобы вернуть array, а не объект
+  });
+
+
+})
 
 module.exports = app;
