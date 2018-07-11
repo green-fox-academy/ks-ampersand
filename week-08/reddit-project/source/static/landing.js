@@ -53,7 +53,7 @@ function sendRequest(request, route, callback) {
         vote : 1,
       }));
       upvoteReq.onload = () => {
-        location.reload();
+        scoreDiv.innerHTML =  +scoreDiv.innerText + 1;
       }
     });
 
